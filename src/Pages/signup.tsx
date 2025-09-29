@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import { Button } from "../components/Ui/Button";
 import axios from "axios";
 import { BackendUrl } from "../config";
+import { Link } from "react-router-dom";
 
 export function SignUp() {
     const usernameRef = useRef<HTMLInputElement>(null);
@@ -197,9 +198,9 @@ export function SignUp() {
 
                         <p className="mt-8 text-center text-sm text-slate-400">
                             Already have an account?{' '}
-                            <a href="./signin" className="text-indigo-400 hover:text-indigo-300 font-medium transition-colors">
+                            <Link to="/signin" className="text-indigo-400 hover:text-indigo-300 font-medium transition-colors">
                                 Sign In
-                            </a>
+                            </Link>
                         </p>
                     </div>
                 </div>

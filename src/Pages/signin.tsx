@@ -2,7 +2,7 @@ import axios from "axios";
 import { useRef, useState } from "react";
 import { Button } from "../components/Ui/Button";
 import { BackendUrl } from "../config";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 
 export function SignIn() {
@@ -192,9 +192,9 @@ export function SignIn() {
 
                         <p className="mt-8 text-center text-sm text-slate-400">
                             Don't have an account?{' '}
-                            <a href="./signup" className="text-indigo-400 hover:text-indigo-300 font-medium transition-colors">
+                            <Link to="/signup" className="text-indigo-400 hover:text-indigo-300 font-medium transition-colors">
                                 Sign up for free
-                            </a>
+                            </Link>
                         </p>
                     </div>
                 </div>
