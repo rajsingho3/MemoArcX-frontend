@@ -1,1 +1,1 @@
-export const BackendUrl = "http://localhost:5000";
+export const BackendUrl = "https://memo-arcx-backend.onrender.com";
