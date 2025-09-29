@@ -5,8 +5,11 @@ import { TwitterIcon } from "./Icons/twitter";
 import { YoutubeIcon } from "./Icons/youtube";
 import { SidebarItems } from "./SidebarItem";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export function Sidebar(){
+    const navigate = useNavigate();
+    
     function handleSignOut() {
         try {
             localStorage.removeItem("token");
@@ -14,9 +17,13 @@ export function Sidebar(){
             // Remove default auth header for future requests
             // eslint-disable-next-line @typescript-eslint/no-dynamic-delete
             delete axios.defaults.headers.common["Authorization"];
-        } finally {
-            // Hard redirect to signin to reset app state
+            // Dispatch auth-changed event to update app state
             window.dispatchEvent(new Event('auth-changed'));
+            // Use React Router navigation instead of window.location
+            navigate("/signin", { replace: true });
+        } catch (error) {
+            console.error("Error during signout:", error);
+            // Fallback to window.location if navigate fails
             window.location.href = "/signin";
         }
     }

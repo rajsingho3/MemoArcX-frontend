@@ -175,9 +175,13 @@ export function SignIn() {
                                     <input type="checkbox" className="mr-2 rounded border-slate-600 bg-white/10" />
                                     Remember me
                                 </label>
-                                <a href="#" className="text-sm text-indigo-400 hover:text-indigo-300 transition-colors">
+                                <button 
+                                    type="button" 
+                                    onClick={() => alert("Password reset functionality coming soon!")}
+                                    className="text-sm text-indigo-400 hover:text-indigo-300 transition-colors bg-transparent border-none cursor-pointer"
+                                >
                                     Forgot password?
-                                </a>
+                                </button>
                             </div>
 
                             <Button
